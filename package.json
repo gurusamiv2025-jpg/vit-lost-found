@@ -1,0 +1,26 @@
+{
+  "name": "vit-lost-found",
+  "version": "1.0.0",
+  "description": "VIT Campus Lost & Found Recovery Portal: report lost/found items, verify ownership privately, and coordinate safe on-campus handoffs.",
+  "main": "src/server.js",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:init": "node scripts/init-db.js",
+    "db:seed": "node scripts/seed.js",
+    "db:reset": "node scripts/init-db.js --reset && node scripts/seed.js",
+    "setup": "npm install && npm run db:init && npm run db:seed",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^12.4.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
